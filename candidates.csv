@@ -1,0 +1,14 @@
+﻿donor_id,candidate_name,donation_amount
+1,Aaron,100
+1,Aaron,100
+1,Bill,500
+1,Carlos,20
+1,Carlos,500
+2,Aaron,10
+2,Bill,300
+2,Bill,300
+2,Dave,200
+2,Dave,200
+3,Aaron,40
+3,Bill,20
+3,Dave,60
