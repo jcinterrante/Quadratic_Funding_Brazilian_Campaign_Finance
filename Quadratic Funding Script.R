@@ -1,8 +1,19 @@
 library(tidyverse)
+library(lubridate)
 
-individual_donations <- read.csv("candidates.csv")
+data <- read.csv("donation_data.csv", encoding = "latin1")
+individual_donations <- data %>% 
+  select(donor_id, candidate_name, candidate_id, NM_PARTIDO, 
+         date_donation_reported,donation_amount)%>%
+  filter(!is.na(donor_id), donor_id != -1, !is.na(donation_amount)) %>%
+  
 
-match <- 2350
+ggplot(individual_donations, mapping = aes(x=date_donation_reported)) +
+       geom_bar()
+    
+
+
+match <- sum(individual_donations$donation_amount)
 
 donor_summary <- individual_donations %>%
   group_by(donor_id, candidate_name) %>%
